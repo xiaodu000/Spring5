@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="stu" class="com.spring.collectiontype.Stu">
+<!--        字符串数组注入-->
+        <property name="courses">
+            <array>
+                <value>java</value>
+                <value>c语言</value>
+            </array>
+        </property>
+<!--        list集合类型属性注入-->
+        <property name="list">
+            <list>
+                <value>张三</value>
+                <value>小三</value>
+            </list>
+        </property>
+<!--        map集合类型属性-->
+        <property name="maps">
+            <map>
+                <entry key="1" value="mysql"></entry>
+                <entry key="2" value="redis"></entry>
+            </map>
+        </property>
+<!--        set集合-->
+        <property name="sets">
+            <set>
+                <value>aaa</value>
+                <value>bbb</value>
+            </set>
+        </property>
+<!--    集合里面有多个course对象-->
+        <property name="listcou">
+            <list>
+                <ref bean="course1"></ref>
+                <ref bean="course2"></ref>
+            </list>
+        </property>
+    </bean>
+    <bean id="course1" class="com.spring.collectiontype.Course">
+        <property name="cname" value="c1"></property>
+    </bean>
+    <bean id="course2" class="com.spring.collectiontype.Course">
+        <property name="cname" value="c2"></property>
+    </bean>
+</beans>

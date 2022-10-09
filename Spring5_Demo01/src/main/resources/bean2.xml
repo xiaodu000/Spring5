@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--        外部bean-->
+<!--        <bean id="userservice" class="com.service.UserService">-->
+<!--            <property name="userdao" ref="userdaoimpl"></property>-->
+<!--        </bean>-->
+<!--        <bean id="userdaoimpl" class="com.dao.UserDaoImpl"></bean>-->
+<!--        内部bean-->
+<!--        <bean id="emp" class="com.bean.Emp">-->
+<!--            <property name="name" value="张三"></property>-->
+<!--            <property name="sex" value="男"></property>-->
+<!--            <property name="dept">-->
+<!--                <bean id="dept" class="com.bean.Dept">-->
+<!--                    <property name="dname" value="研发部"></property>-->
+<!--                </bean>-->
+<!--            </property>-->
+<!--        </bean>-->
+            <bean id="emp" class="com.bean.Emp">
+                <property name="name" value="啊啊"></property>
+                <property name="sex" value="男"></property>
+                <property name="dept" ref="dept"></property>
+                <property name="dept.dname" value="技术部"></property>
+            </bean>
+            <bean id="dept" class="com.bean.Dept">
+                <property name="dname" value="研发部"></property>
+            </bean>
+</beans>
